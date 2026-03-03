@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>PILOT REGISTRATION</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<body class="arcade-theme">
+    <main class="container">
+        <section class="form-box">
+            <header>
+                <h2>NEW PILOT ENLISTMENT</h2>
+            </header>
+
+            <form id="signupForm">
+                <fieldset class="terms-section">
+                    <legend>TERMS OF SERVICE</legend>
+                    <label><input type="checkbox" id="checkAll"> [전체 선택]</label><br>
+                    <label><input type="checkbox" class="terms" required> 개인정보처리방침 (필수)</label><br>
+                    <label><input type="checkbox" class="terms" required> 서비스 이용약관 (필수)</label><br>
+                    <label><input type="checkbox" class="terms"> 마케팅 수집 동의 (선택)</label>
+                </fieldset>
+
+                <div class="input-group">
+                    <label for="userId">ID</label>
+                    <input type="text" id="userId" required placeholder="Enter ID">
+                    <button type="button" id="btnIdCheck" class="btn-small">CHECK ID</button>
+                </div>
+
+                <div class="input-group">
+                    <label for="nickname">NICKNAME</label>
+                    <input type="text" id="nickname" required placeholder="Enter Nickname">
+                    <button type="button" id="btnNickCheck" class="btn-small">CHECK NICK</button>
+                </div>
+
+                <div class="input-group">
+                    <label for="pw">PASSWORD</label>
+                    <input type="password" id="pw" required placeholder="8+ chars, Eng/Num/Special">
+                    <p id="pwMsg" class="msg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="pwConfirm">CONFIRM PW</label>
+                    <input type="password" id="pwConfirm" required placeholder="Re-enter Password">
+                    <p id="pwConfirmMsg" class="msg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label>ADDRESS</label>
+                    <input type="text" id="postcode" placeholder="Zipcode" readonly>
+                    <button type="button" onclick="execDaumPostcode()" class="btn-small">SEARCH</button><br>
+                    <input type="text" id="address" placeholder="Address" readonly style="width: 100%; margin-top:5px;">
+                </div>
+
+                <button type="submit" class="btn-retro submit-btn">COMPLETE REGISTRATION</button>
+            </form>
+        </section>
+    </main>
+    <script src="signup.js"></script>
+</body>
+</html>
